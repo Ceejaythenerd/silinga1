@@ -1,0 +1,911 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Silinga Enterprise | Electrical & Solar Experts</title>
+    
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&family=Plus+Jakarta+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+
+    <style>
+        /* --- FLUID DESIGN SYSTEM --- */
+        :root {
+            --brand-navy: #032b43;
+            --brand-green: #3bb54a;
+            --brand-green-hover: #2e963b;
+            --text-main: #1e293b;
+            --text-muted: #64748b;
+            --bg-off-white: rgba(248, 250, 252, 0.7); /* Semi-transparent for fluid bg */
+            --glass-bg: rgba(255, 255, 255, 0.85);
+            --glass-border: rgba(255, 255, 255, 0.3);
+        }
+
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            color: var(--text-main);
+            overflow-x: hidden;
+            background-color: transparent; /* Changed to transparent to show fluid bg */
+            scroll-behavior: smooth;
+            position: relative;
+        }
+
+        /* --- FLUID BACKGROUND ANIMATION --- */
+        .fluid-bg {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            z-index: -1;
+            overflow: hidden;
+            background: #f8fafc; /* Base color moved here */
+            pointer-events: none; /* Ensures clicks go through */
+        }
+
+        .fluid-blob {
+            position: absolute;
+            filter: blur(60px); /* Reduced blur slightly for better visibility */
+            border-radius: 50%;
+            animation: floatBlob 20s infinite ease-in-out alternate;
+            opacity: 1; /* Increased opacity */
+        }
+
+        .blob-1 { 
+            width: 600px; 
+            height: 600px; 
+            top: -100px; 
+            left: -100px; 
+            /* Stronger Green */
+            background: radial-gradient(circle, rgba(59, 181, 74, 0.4) 0%, rgba(255,255,255,0) 70%);
+            animation-duration: 25s; 
+        }
+        
+        .blob-2 { 
+            width: 500px; 
+            height: 500px; 
+            bottom: -50px; 
+            right: -50px; 
+            /* Stronger Navy */
+            background: radial-gradient(circle, rgba(3, 43, 67, 0.3) 0%, rgba(255,255,255,0) 70%);
+            animation-duration: 30s; 
+            animation-delay: -5s; 
+        }
+        
+        .blob-3 { 
+            width: 400px; 
+            height: 400px; 
+            top: 40%; 
+            left: 30%; 
+            /* Mixed Green */
+            background: radial-gradient(circle, rgba(59, 181, 74, 0.3) 0%, rgba(255,255,255,0) 70%);
+            animation-duration: 20s; 
+            animation-delay: -10s; 
+        }
+
+        @keyframes floatBlob {
+            0% { transform: translate(0, 0) scale(1); }
+            100% { transform: translate(50px, 30px) scale(1.1); }
+        }
+
+        h1, h2, h3, h4, h5 {
+            font-family: 'Outfit', sans-serif;
+            color: var(--brand-navy);
+            font-weight: 700;
+            line-height: 1.1;
+        }
+
+        /* Fluid Typography */
+        .display-fluid {
+            font-size: clamp(2.5rem, 6vw + 1rem, 5.5rem);
+            font-weight: 800;
+            letter-spacing: -0.02em;
+            text-shadow: 0 4px 15px rgba(0,0,0,0.3);
+        }
+
+        .h2-fluid {
+            font-size: clamp(2rem, 3vw + 1rem, 3.5rem);
+        }
+
+        .lead-fluid {
+            font-size: clamp(1.1rem, 1.5vw, 1.35rem);
+            font-weight: 400;
+            color: rgba(255, 255, 255, 0.95);
+            text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+        }
+
+        /* --- BUTTONS --- */
+        .btn-fluid {
+            padding: 1rem 2.5rem;
+            font-size: 1rem;
+            font-weight: 600;
+            border-radius: 50px;
+            background: linear-gradient(135deg, var(--brand-green), var(--brand-green-hover));
+            color: white;
+            border: none;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            position: relative;
+            overflow: hidden;
+            z-index: 1;
+        }
+
+        .btn-fluid::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, var(--brand-green-hover), var(--brand-green));
+            opacity: 0;
+            z-index: -1;
+            transition: 0.4s;
+        }
+
+        .btn-fluid:hover {
+            transform: translateY(-4px) scale(1.02);
+            box-shadow: 0 15px 30px rgba(59, 181, 74, 0.4);
+            color: white;
+        }
+        
+        .btn-fluid:hover::before { opacity: 1; }
+
+        .btn-outline-fluid {
+            padding: 1rem 2.5rem;
+            font-size: 1rem;
+            font-weight: 600;
+            border-radius: 50px;
+            background: rgba(255,255,255,0.1);
+            backdrop-filter: blur(5px);
+            color: white;
+            border: 2px solid white;
+            transition: all 0.3s ease;
+        }
+
+        .btn-outline-fluid:hover {
+            background-color: white;
+            color: var(--brand-navy);
+            border-color: white;
+        }
+
+        /* --- GLASS NAVBAR --- */
+        .navbar {
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(15px);
+            -webkit-backdrop-filter: blur(15px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.5);
+            padding: 1rem 0;
+            transition: 0.3s;
+        }
+
+        .nav-link {
+            font-family: 'Outfit', sans-serif;
+            font-weight: 600;
+            color: var(--brand-navy) !important;
+            margin: 0 0.8rem;
+            position: relative;
+            padding: 5px 0;
+        }
+
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--brand-green);
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .nav-link:hover::after, .nav-link.active::after {
+            width: 100%;
+        }
+
+        /* --- CINEMATIC HERO SECTION --- */
+        .hero-section {
+            position: relative;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+            overflow: hidden;
+            padding-top: 60px;
+            background-color: var(--brand-navy);
+            /* Static image fallback */
+            background-image: linear-gradient(180deg, rgba(3, 43, 67, 0.85) 0%, rgba(3, 43, 67, 0.6) 50%, rgba(3, 43, 67, 0.9) 100%), url('https://images.unsplash.com/photo-1509391366360-2e959784a276?q=80&w=2072&auto=format&fit=crop');
+            background-size: cover;
+            background-position: center;
+        }
+
+        .hero-content {
+            max-width: 1000px;
+            padding: 0 20px;
+            z-index: 1;
+        }
+
+        .hero-title span {
+            color: var(--brand-green);
+            position: relative;
+            display: inline-block;
+        }
+        
+        /* --- SCROLL ANIMATIONS (Reveal on Scroll) --- */
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s cubic-bezier(0.5, 0, 0, 1);
+        }
+
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .delay-100 { transition-delay: 0.1s; }
+        .delay-200 { transition-delay: 0.2s; }
+        .delay-300 { transition-delay: 0.3s; }
+
+        /* --- RESPONSIVE GRID LAYOUTS --- */
+        .section-padding {
+            padding: clamp(5rem, 10vw, 10rem) 0;
+        }
+
+        /* Services Section with Background Image */
+        #services {
+            position: relative;
+            /* Fallback color */
+            background-color: var(--brand-navy);
+            /* Updated to use the specific Cable Jointing image you uploaded */
+            background-image: linear-gradient(rgba(3, 43, 67, 0.9), rgba(3, 43, 67, 0.8)), url('WhatsApp Image 2025-12-11 at 19.38.03.jpeg');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            z-index: 1; /* Ensure it sits above fluid bg */
+        }
+
+        /* Services Grid */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .service-card {
+            background: rgba(255, 255, 255, 0.95); /* Slightly less transparent for contrast */
+            backdrop-filter: blur(10px);
+            border-radius: 1.5rem;
+            padding: 2.5rem;
+            border: 1px solid rgba(255,255,255,0.1);
+            transition: all 0.4s ease;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            height: 100%;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
+
+        .service-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 5px;
+            background: var(--brand-green);
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: transform 0.4s ease;
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 25px 50px -12px rgba(0,0,0,0.1);
+        }
+
+        .service-card:hover::before {
+            transform: scaleX(1);
+        }
+
+        .icon-box {
+            width: 70px;
+            height: 70px;
+            background: rgba(59, 181, 74, 0.1);
+            color: var(--brand-green);
+            border-radius: 1rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.75rem;
+            margin-bottom: 1.5rem;
+            transition: 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+
+        .service-card:hover .icon-box {
+            background: var(--brand-green);
+            color: white;
+            transform: rotate(10deg) scale(1.1);
+        }
+
+        .service-card h3 {
+            font-size: 1.6rem;
+            margin-bottom: 1rem;
+        }
+
+        .service-card p {
+            color: var(--text-muted);
+            line-height: 1.7;
+            margin-bottom: 2rem;
+            flex-grow: 1;
+        }
+
+        .service-link {
+            color: var(--brand-navy);
+            font-weight: 700;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            transition: 0.3s;
+        }
+
+        .service-link:hover {
+            color: var(--brand-green);
+            gap: 0.8rem;
+        }
+
+        /* --- MOTION PICTURE GALLERY --- */
+        .gallery-wrapper {
+            background-color: #0f172a; /* Dark background for contrast */
+            padding-bottom: 0;
+            position: relative;
+            z-index: 2; /* Sit above fluid bg */
+        }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 0;
+        }
+
+        .gallery-item {
+            position: relative;
+            height: 350px;
+            overflow: hidden;
+            cursor: pointer;
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            /* Ken Burns Effect (Slow Zoom) */
+            animation: kenBurns 20s infinite alternate;
+            transition: transform 0.4s ease, filter 0.4s ease;
+        }
+
+        /* Pause auto-zoom on hover to focus */
+        .gallery-item:hover img {
+            animation-play-state: paused;
+            transform: scale(1.15);
+            filter: brightness(0.6);
+        }
+
+        @keyframes kenBurns {
+            0% { transform: scale(1); }
+            100% { transform: scale(1.1); }
+        }
+
+        .gallery-overlay {
+            position: absolute;
+            inset: 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            opacity: 0;
+            transition: 0.4s ease;
+            z-index: 2;
+        }
+
+        .gallery-item:hover .gallery-overlay {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .gallery-content {
+            transform: translateY(20px);
+            transition: 0.4s ease;
+            text-align: center;
+        }
+
+        .gallery-item:hover .gallery-content {
+            transform: translateY(0);
+        }
+
+        /* --- CONTACT SECTION --- */
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .contact-info-card {
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+            padding: 2rem;
+            background: rgba(255,255,255,0.95);
+            backdrop-filter: blur(10px);
+            border-radius: 1.5rem;
+            margin-bottom: 1.5rem;
+            transition: 0.3s;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+            border: 1px solid rgba(0,0,0,0.05);
+        }
+
+        .contact-info-card:hover {
+            transform: translateX(10px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+            border-color: var(--brand-green);
+        }
+
+        .contact-icon-small {
+            font-size: 1.8rem;
+            color: var(--brand-green);
+        }
+
+        .form-control, .form-select {
+            padding: 1.2rem;
+            border-radius: 0.8rem;
+            border: 1px solid #e2e8f0;
+            background-color: #f8fafc;
+            transition: 0.3s;
+        }
+
+        .form-control:focus {
+            background-color: white;
+            border-color: var(--brand-green);
+            box-shadow: 0 0 0 4px rgba(59, 181, 74, 0.1);
+        }
+
+        /* --- FOOTER --- */
+        footer {
+            background-color: #0b1120;
+            color: #94a3b8;
+            padding: 5rem 0 3rem;
+            position: relative;
+            z-index: 10;
+        }
+        
+        footer h5 { color: white; margin-bottom: 1.5rem; }
+        footer a { color: inherit; text-decoration: none; transition: 0.3s; }
+        footer a:hover { color: var(--brand-green); padding-left: 5px; }
+
+        /* --- UTILS --- */
+        .whatsapp-float {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background-color: #25d366;
+            color: white;
+            width: 65px;
+            height: 65px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 32px;
+            box-shadow: 0 10px 25px rgba(37, 211, 102, 0.4);
+            z-index: 1000;
+            transition: 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            text-decoration: none;
+            border: 3px solid white;
+        }
+        
+        .whatsapp-float:hover { transform: scale(1.1) rotate(10deg); color: white; }
+
+        .scroll-top {
+            position: fixed;
+            bottom: 30px;
+            right: 110px;
+            background: var(--brand-navy);
+            color: white;
+            width: 65px;
+            height: 65px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            z-index: 999;
+            transition: 0.3s;
+            opacity: 0;
+            visibility: hidden;
+            box-shadow: 0 10px 25px rgba(3, 43, 67, 0.3);
+            text-decoration: none;
+            border: 3px solid white;
+        }
+
+        .scroll-top.active { opacity: 1; visibility: visible; }
+        .scroll-top:hover { background: var(--brand-green); color: white; transform: translateY(-5px); }
+
+        /* Pulse Animation for CTA */
+        @keyframes pulse-green {
+            0% { box-shadow: 0 0 0 0 rgba(59, 181, 74, 0.7); }
+            70% { box-shadow: 0 0 0 15px rgba(59, 181, 74, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(59, 181, 74, 0); }
+        }
+
+        .pulse-btn {
+            animation: pulse-green 2s infinite;
+        }
+
+    </style>
+</head>
+<body>
+    
+    <!-- Fluid Background Animation -->
+    <div class="fluid-bg">
+        <div class="fluid-blob blob-1"></div>
+        <div class="fluid-blob blob-2"></div>
+        <div class="fluid-blob blob-3"></div>
+    </div>
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="#">
+                <img src="Logo.jpeg" alt="Silinga Enterprise" height="50">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto align-items-center">
+                    <li class="nav-item"><a class="nav-link active" href="#home">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#services">Services</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#projects">Work</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+                    <li class="nav-item ms-lg-3">
+                        <a href="#contact" class="btn btn-fluid pulse-btn">Get Started</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Cinematic Hero Section -->
+    <section id="home" class="hero-section">
+        <div class="hero-content reveal">
+            <h1 class="display-fluid mb-4 hero-title">Powering Your World With <span>Smart Solutions</span></h1>
+            <p class="lead-fluid mb-5">Certified Electrical Maintenance, Advanced Solar Systems, and Security Installations. Serving Gauteng with excellence.</p>
+            <div class="d-flex flex-wrap justify-content-center gap-3">
+                <a href="#services" class="btn btn-fluid">Explore Services</a>
+                <a href="tel:+27633191727" class="btn btn-outline-fluid">Call Now</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- About / Trust Strip -->
+    <div class="py-5 border-bottom" style="background: rgba(255,255,255,0.9);">
+        <div class="container">
+            <div class="row text-center g-4 justify-content-center reveal delay-100">
+                <div class="col-6 col-md-3">
+                    <div class="p-3">
+                        <h2 class="text-success mb-0 fw-bold display-4">100%</h2>
+                        <span class="text-muted fw-bold small text-uppercase ls-2">Certified</span>
+                    </div>
+                </div>
+                <div class="col-6 col-md-3">
+                    <div class="p-3">
+                        <h2 class="text-success mb-0 fw-bold display-4">24/7</h2>
+                        <span class="text-muted fw-bold small text-uppercase ls-2">Support</span>
+                    </div>
+                </div>
+                <div class="col-6 col-md-3">
+                    <div class="p-3">
+                        <h2 class="text-success mb-0 fw-bold display-4">500+</h2>
+                        <span class="text-muted fw-bold small text-uppercase ls-2">Projects</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Services Section -->
+    <section id="services" class="section-padding">
+        <div class="container">
+            <div class="text-center max-w-2xl mx-auto mb-5 reveal">
+                <h5 class="text-success text-uppercase ls-2">What We Do</h5>
+                <h2 class="h2-fluid mb-3 text-white">Comprehensive Solutions</h2>
+                <p class="text-white-50">Tailored electrical and security services for residential and commercial needs.</p>
+            </div>
+
+            <div class="services-grid">
+                <!-- Electrical -->
+                <div class="service-card reveal delay-100">
+                    <div class="icon-box"><i class="fas fa-bolt"></i></div>
+                    <h3>Electrical Maintenance</h3>
+                    <p>Fault finding, DB board upgrades, wiring repairs, and COC certification.</p>
+                    <a href="#contact" class="service-link">Learn More <i class="fas fa-arrow-right"></i></a>
+                </div>
+
+                <!-- Solar -->
+                <div class="service-card reveal delay-200">
+                    <div class="icon-box"><i class="fas fa-solar-panel"></i></div>
+                    <h3>Solar Systems</h3>
+                    <p>Complete off-grid and hybrid solar installations using premium panels and inverters.</p>
+                    <a href="#contact" class="service-link">Go Solar <i class="fas fa-arrow-right"></i></a>
+                </div>
+
+                <!-- Backup -->
+                <div class="service-card reveal delay-300">
+                    <div class="icon-box"><i class="fas fa-battery-full"></i></div>
+                    <h3>Backup Power</h3>
+                    <p>Reliable inverter and lithium battery backup systems to beat load shedding.</p>
+                    <a href="#contact" class="service-link">Stay Powered <i class="fas fa-arrow-right"></i></a>
+                </div>
+
+                <!-- Fencing -->
+                <div class="service-card reveal delay-100">
+                    <div class="icon-box"><i class="fas fa-shield-alt"></i></div>
+                    <h3>Electric Fencing</h3>
+                    <p>Perimeter security solutions, installation, and compliance repairs.</p>
+                    <a href="#contact" class="service-link">Secure Home <i class="fas fa-arrow-right"></i></a>
+                </div>
+
+                <!-- Gate Motors -->
+                <div class="service-card reveal delay-200">
+                    <div class="icon-box"><i class="fas fa-door-open"></i></div>
+                    <h3>Gate Motors</h3>
+                    <p>Installation and servicing of automated gate motors for convenient access.</p>
+                    <a href="#contact" class="service-link">Automate <i class="fas fa-arrow-right"></i></a>
+                </div>
+
+                <!-- Cables -->
+                <div class="service-card reveal delay-300">
+                    <div class="icon-box"><i class="fas fa-network-wired"></i></div>
+                    <h3>Cable Jointing</h3>
+                    <p>Specialized high-voltage cable jointing and termination services.</p>
+                    <a href="#contact" class="service-link">View Service <i class="fas fa-arrow-right"></i></a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Motion Picture Gallery (Full Width) -->
+    <section id="projects" class="gallery-wrapper">
+        <div class="container section-padding text-white text-center reveal">
+            <h5 class="text-success text-uppercase ls-2">Workmanship Gallery</h5>
+            <h2 class="h2-fluid text-white mb-5">Our Recent Projects</h2>
+        </div>
+        <div class="gallery-grid">
+            <div class="gallery-item">
+                <img src="WhatsApp Image 2025-12-11 at 19.39.09 (2).jpeg" alt="Solar">
+                <div class="gallery-overlay">
+                    <div class="gallery-content">
+                        <h4>Solar Roof</h4>
+                        <span>Precision Installation</span>
+                    </div>
+                </div>
+            </div>
+            <div class="gallery-item">
+                <img src="WhatsApp Image 2025-12-11 at 19.39.07 (2).jpeg" alt="Inverter">
+                <div class="gallery-overlay">
+                    <div class="gallery-content">
+                        <h4>Hybrid System</h4>
+                        <span>Deye Inverter Setup</span>
+                    </div>
+                </div>
+            </div>
+            <div class="gallery-item">
+                <img src="WhatsApp Image 2025-12-11 at 19.38.00.jpeg" alt="DB">
+                <div class="gallery-overlay">
+                    <div class="gallery-content">
+                        <h4>DB Board</h4>
+                        <span>Industrial Maintenance</span>
+                    </div>
+                </div>
+            </div>
+            <div class="gallery-item">
+                <img src="WhatsApp Image 2025-12-11 at 19.39.07.jpeg" alt="Growatt">
+                <div class="gallery-overlay">
+                    <div class="gallery-content">
+                        <h4>Growatt</h4>
+                        <span>Inverter Installation</span>
+                    </div>
+                </div>
+            </div>
+            <div class="gallery-item">
+                <img src="WhatsApp Image 2025-12-11 at 19.39.06.jpeg" alt="Battery">
+                <div class="gallery-overlay">
+                    <div class="gallery-content">
+                        <h4>Dyness Battery</h4>
+                        <span>Power Storage</span>
+                    </div>
+                </div>
+            </div>
+            <div class="gallery-item">
+                <img src="WhatsApp Image 2025-12-11 at 19.38.03.jpeg" alt="Cables">
+                <div class="gallery-overlay">
+                    <div class="gallery-content">
+                        <h4>HV Cables</h4>
+                        <span>Jointing Expert</span>
+                    </div>
+                </div>
+            </div>
+            <div class="gallery-item">
+                <img src="WhatsApp Image 2025-12-11 at 19.39.08 (1).jpeg" alt="Backup">
+                <div class="gallery-overlay">
+                    <div class="gallery-content">
+                        <h4>Backup Unit</h4>
+                        <span>Compact Install</span>
+                    </div>
+                </div>
+            </div>
+            <div class="gallery-item">
+                <img src="WhatsApp Image 2025-12-11 at 19.38.01.jpeg" alt="Repair">
+                <div class="gallery-overlay">
+                    <div class="gallery-content">
+                        <h4>Site Repairs</h4>
+                        <span>On-site Maintenance</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="section-padding">
+        <div class="container">
+            <div class="contact-grid">
+                <div class="reveal">
+                    <h5 class="text-success text-uppercase ls-2">Contact Us</h5>
+                    <h2 class="h2-fluid mb-4">Let's Discuss Your Project</h2>
+                    <p class="text-muted mb-5">We are ready to assist you. Reach out for a free consultation and quote.</p>
+
+                    <div class="contact-info-card">
+                        <i class="fas fa-map-marker-alt contact-icon-small"></i>
+                        <div>
+                            <h5 class="mb-1">Our Location</h5>
+                            <p class="text-muted mb-0">6868 Makhosi Street, Grasmere 1828</p>
+                        </div>
+                    </div>
+
+                    <div class="contact-info-card">
+                        <i class="fas fa-phone-alt contact-icon-small"></i>
+                        <div>
+                            <h5 class="mb-1">Phone Number</h5>
+                            <p class="text-muted mb-0">+27 63 319 1727</p>
+                        </div>
+                    </div>
+
+                    <div class="contact-info-card">
+                        <i class="fas fa-envelope contact-icon-small"></i>
+                        <div>
+                            <h5 class="mb-1">Email Address</h5>
+                            <p class="text-muted mb-0">xolanisilinga55@gmail.com</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="reveal delay-200">
+                    <form class="p-4 bg-white rounded-4 shadow-sm border">
+                        <div class="row g-3">
+                            <div class="col-md-6">
+                                <label class="form-label text-muted small fw-bold">First Name</label>
+                                <input type="text" class="form-control">
+                            </div>
+                            <div class="col-md-6">
+                                <label class="form-label text-muted small fw-bold">Last Name</label>
+                                <input type="text" class="form-control">
+                            </div>
+                            <div class="col-12">
+                                <label class="form-label text-muted small fw-bold">Service Required</label>
+                                <select class="form-select">
+                                    <option>Select a service...</option>
+                                    <option>Electrical Maintenance</option>
+                                    <option>Solar System</option>
+                                    <option>Backup Power</option>
+                                    <option>Fencing/Gates</option>
+                                </select>
+                            </div>
+                            <div class="col-12">
+                                <label class="form-label text-muted small fw-bold">Message</label>
+                                <textarea class="form-control" rows="4"></textarea>
+                            </div>
+                            <div class="col-12">
+                                <button class="btn btn-fluid w-100">Send Message</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="row g-4">
+                <div class="col-lg-4">
+                    <h5 class="text-white mb-3">Silinga Enterprise</h5>
+                    <p>Professional Solar Installation And Electric Work. We ensure quality, safety, and reliability in every project.</p>
+                </div>
+                <div class="col-lg-2 offset-lg-2">
+                    <h5>Links</h5>
+                    <ul class="list-unstyled d-flex flex-column gap-2">
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#services">Services</a></li>
+                        <li><a href="#projects">Gallery</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-4">
+                    <h5>Connect</h5>
+                    <div class="d-flex gap-3 mt-3">
+                        <a href="#"><i class="fab fa-facebook-f fa-lg"></i></a>
+                        <a href="#"><i class="fab fa-instagram fa-lg"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in fa-lg"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="border-top border-secondary mt-5 pt-4 text-center">
+                <p class="mb-0 small">&copy; 2024 Silinga Enterprise. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Floating Actions -->
+    <a href="https://wa.me/27633191727" class="whatsapp-float" target="_blank">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+    <a href="#" class="scroll-top" id="scrollTopBtn">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        const scrollTopBtn = document.getElementById('scrollTopBtn');
+        
+        // Scroll Top Logic
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 300) scrollTopBtn.classList.add('active');
+            else scrollTopBtn.classList.remove('active');
+        });
+        
+        scrollTopBtn.addEventListener('click', (e) => {
+            e.preventDefault();
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+
+        // Intersection Observer for Scroll Animations
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach((entry) => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('active');
+                }
+            });
+        }, {
+            threshold: 0.1
+        });
+
+        const hiddenElements = document.querySelectorAll('.reveal');
+        hiddenElements.forEach((el) => observer.observe(el));
+    </script>
+</body>
+</html>
