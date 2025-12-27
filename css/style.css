@@ -468,6 +468,13 @@ h5 {
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
     height: 100%;
     border: 1px solid rgba(0, 0, 0, 0.05);
+    transition: 0.3s;
+}
+
+.testimonial-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+    border-color: var(--brand-green);
 }
 
 .stars {
@@ -564,6 +571,12 @@ h5 {
     margin-bottom: 1rem;
     background: white;
     overflow: hidden;
+    transition: 0.3s;
+}
+
+.faq-item:hover {
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
+    border-color: var(--brand-green);
 }
 
 .accordion-button {
