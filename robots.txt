@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://silingaenterprise.co.za/sitemap.xml

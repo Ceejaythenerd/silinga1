@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Silinga Enterprise | Electrical & Solar Experts</title>
+    <title>Contact Us | Silinga Enterprise</title>
 
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -151,26 +151,6 @@
             color: white;
         }
 
-        .btn-outline-fluid {
-            padding: 1rem 2.5rem;
-            font-size: 1rem;
-            font-weight: 600;
-            border-radius: 50px;
-            background: rgba(255, 255, 255, 0.1);
-            backdrop-filter: blur(5px);
-            color: white;
-            border: 2px solid white;
-            transition: all 0.3s ease;
-            text-decoration: none;
-            display: inline-block;
-        }
-
-        .btn-outline-fluid:hover {
-            background-color: white;
-            color: var(--brand-navy);
-            border-color: white;
-        }
-
         /* Navbar */
         .navbar {
             background: rgba(255, 255, 255, 0.8);
@@ -206,33 +186,65 @@
             width: 100%;
         }
 
-        /* Hero Section */
-        .hero-section {
-            position: relative;
-            min-height: 100vh;
+        /* Page Header */
+        .page-header {
+            padding: 120px 0 80px;
+            background-color: var(--brand-navy);
+            background-image: linear-gradient(180deg, rgba(3, 43, 67, 0.9) 0%, rgba(3, 43, 67, 0.8) 100%);
+            color: white;
+            text-align: center;
+        }
+
+        /* Contact Section */
+        .section-padding {
+            padding: clamp(5rem, 10vw, 10rem) 0;
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .contact-info-card {
             display: flex;
             align-items: center;
-            justify-content: center;
-            text-align: center;
-            color: white;
-            overflow: hidden;
-            padding-top: 60px;
-            background-color: var(--brand-navy);
-            background-image: linear-gradient(180deg, rgba(3, 43, 67, 0.85) 0%, rgba(3, 43, 67, 0.6) 50%, rgba(3, 43, 67, 0.9) 100%), url('https://images.unsplash.com/photo-1509391366360-2e959784a276?q=80&w=2072&auto=format&fit=crop');
-            background-size: cover;
-            background-position: center;
+            gap: 1.5rem;
+            padding: 2rem;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-radius: 1.5rem;
+            margin-bottom: 1.5rem;
+            transition: 0.3s;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+            border: 1px solid rgba(0, 0, 0, 0.05);
         }
 
-        .hero-content {
-            max-width: 1000px;
-            padding: 0 20px;
-            z-index: 1;
+        .contact-info-card:hover {
+            transform: translateX(10px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+            border-color: var(--brand-green);
         }
 
-        .hero-title span {
+        .contact-icon-small {
+            font-size: 1.8rem;
             color: var(--brand-green);
-            position: relative;
-            display: inline-block;
+        }
+
+        .form-control,
+        .form-select {
+            padding: 1.2rem;
+            border-radius: 0.8rem;
+            border: 1px solid #e2e8f0;
+            background-color: #f8fafc;
+            transition: 0.3s;
+        }
+
+        .form-control:focus {
+            background-color: white;
+            border-color: var(--brand-green);
+            box-shadow: 0 0 0 4px rgba(59, 181, 74, 0.1);
         }
 
         /* Footer */
@@ -260,83 +272,6 @@
             padding-left: 5px;
         }
 
-        /* Utils */
-        .whatsapp-float {
-            position: fixed;
-            bottom: 30px;
-            right: 30px;
-            background-color: #25d366;
-            color: white;
-            width: 65px;
-            height: 65px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 32px;
-            box-shadow: 0 10px 25px rgba(37, 211, 102, 0.4);
-            z-index: 1000;
-            transition: 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-            text-decoration: none;
-            border: 3px solid white;
-        }
-
-        .whatsapp-float:hover {
-            transform: scale(1.1) rotate(10deg);
-            color: white;
-        }
-
-        .scroll-top {
-            position: fixed;
-            bottom: 30px;
-            right: 110px;
-            background: var(--brand-navy);
-            color: white;
-            width: 65px;
-            height: 65px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 24px;
-            z-index: 999;
-            transition: 0.3s;
-            opacity: 0;
-            visibility: hidden;
-            box-shadow: 0 10px 25px rgba(3, 43, 67, 0.3);
-            text-decoration: none;
-            border: 3px solid white;
-        }
-
-        .scroll-top.active {
-            opacity: 1;
-            visibility: visible;
-        }
-
-        .scroll-top:hover {
-            background: var(--brand-green);
-            color: white;
-            transform: translateY(-5px);
-        }
-
-        @keyframes pulse-green {
-            0% {
-                box-shadow: 0 0 0 0 rgba(59, 181, 74, 0.7);
-            }
-
-            70% {
-                box-shadow: 0 0 0 15px rgba(59, 181, 74, 0);
-            }
-
-            100% {
-                box-shadow: 0 0 0 0 rgba(59, 181, 74, 0);
-            }
-        }
-
-        .pulse-btn {
-            animation: pulse-green 2s infinite;
-        }
-
         /* Animations */
         .reveal {
             opacity: 0;
@@ -349,8 +284,8 @@
             transform: translateY(0);
         }
 
-        .delay-100 {
-            transition-delay: 0.1s;
+        .delay-200 {
+            transition-delay: 0.2s;
         }
     </style>
 </head>
@@ -375,56 +310,97 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto align-items-center">
-                    <li class="nav-item"><a class="nav-link active" href="index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
                     <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
                     <li class="nav-item"><a class="nav-link" href="services.html">Services</a></li>
-                    <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="contact.html">Contact</a></li>
                     <li class="nav-item ms-lg-3">
-                        <a href="contact.html" class="btn btn-fluid pulse-btn">Get Started</a>
+                        <a href="contact.html" class="btn btn-fluid">Get Started</a>
                     </li>
                 </ul>
             </div>
         </div>
     </nav>
 
-    <!-- Cinematic Hero Section -->
-    <section id="home" class="hero-section">
-        <div class="hero-content reveal">
-            <h1 class="display-fluid mb-4 hero-title">Empowering Tomorrow, <span>Today</span></h1>
-            <p class="lead-fluid mb-5">Lighting the Path to Sustainable Energy. Certified Electrical Maintenance,
-                Advanced Solar Systems, and Security Installations.</p>
-            <div class="d-flex flex-wrap justify-content-center gap-3">
-                <a href="services.html" class="btn btn-fluid">Explore Services</a>
-                <a href="contact.html" class="btn btn-outline-fluid">Get a Quote</a>
+    <!-- Page Header -->
+    <header class="page-header">
+        <div class="container reveal">
+            <h1 class="display-4 fw-bold mb-3">Contact Us</h1>
+            <p class="lead text-white-50">We are ready to assist you. Reach out for a free consultation.</p>
+        </div>
+    </header>
+
+    <!-- Contact Section -->
+    <section class="section-padding">
+        <div class="container">
+            <div class="contact-grid">
+                <div class="reveal">
+                    <h5 class="text-success text-uppercase ls-2">Get In Touch</h5>
+                    <h2 class="h2-fluid mb-4">Let's Discuss Your Project</h2>
+                    <p class="text-muted mb-5">Silinga Enterprise stands ready to be your partner in harnessing the
+                        power of renewable energy. Our commitment to quality, customer satisfaction, and innovation
+                        ensures a brighter, greener future for you.</p>
+
+                    <div class="contact-info-card">
+                        <i class="fas fa-map-marker-alt contact-icon-small"></i>
+                        <div>
+                            <h5 class="mb-1">Our Location</h5>
+                            <p class="text-muted mb-0">6868 Makhosi Street, Grasmere 1828</p>
+                        </div>
+                    </div>
+
+                    <div class="contact-info-card">
+                        <i class="fas fa-phone-alt contact-icon-small"></i>
+                        <div>
+                            <h5 class="mb-1">Phone Number</h5>
+                            <p class="text-muted mb-0">+27 63 319 1727</p>
+                        </div>
+                    </div>
+
+                    <div class="contact-info-card">
+                        <i class="fas fa-envelope contact-icon-small"></i>
+                        <div>
+                            <h5 class="mb-1">Email Address</h5>
+                            <p class="text-muted mb-0">xolani@silingaenterprise.co.za</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="reveal delay-200">
+                    <form class="p-4 bg-white rounded-4 shadow-sm border">
+                        <div class="row g-3">
+                            <div class="col-md-6">
+                                <label class="form-label text-muted small fw-bold">First Name</label>
+                                <input type="text" class="form-control">
+                            </div>
+                            <div class="col-md-6">
+                                <label class="form-label text-muted small fw-bold">Last Name</label>
+                                <input type="text" class="form-control">
+                            </div>
+                            <div class="col-12">
+                                <label class="form-label text-muted small fw-bold">Service Required</label>
+                                <select class="form-select">
+                                    <option>Select a service...</option>
+                                    <option>Electrical Maintenance</option>
+                                    <option>Solar System</option>
+                                    <option>Backup Power</option>
+                                    <option>Water Proofing</option>
+                                    <option>General Maintenance</option>
+                                </select>
+                            </div>
+                            <div class="col-12">
+                                <label class="form-label text-muted small fw-bold">Message</label>
+                                <textarea class="form-control" rows="4"></textarea>
+                            </div>
+                            <div class="col-12">
+                                <button class="btn btn-fluid w-100">Send Message</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
             </div>
         </div>
     </section>
-
-    <!-- Trust Strip -->
-    <div class="py-5 border-bottom" style="background: rgba(255,255,255,0.9);">
-        <div class="container">
-            <div class="row text-center g-4 justify-content-center reveal delay-100">
-                <div class="col-6 col-md-3">
-                    <div class="p-3">
-                        <h2 class="text-success mb-0 fw-bold display-4">100%</h2>
-                        <span class="text-muted fw-bold small text-uppercase ls-2">Certified</span>
-                    </div>
-                </div>
-                <div class="col-6 col-md-3">
-                    <div class="p-3">
-                        <h2 class="text-success mb-0 fw-bold display-4">24/7</h2>
-                        <span class="text-muted fw-bold small text-uppercase ls-2">Support</span>
-                    </div>
-                </div>
-                <div class="col-6 col-md-3">
-                    <div class="p-3">
-                        <h2 class="text-success mb-0 fw-bold display-4">500+</h2>
-                        <span class="text-muted fw-bold small text-uppercase ls-2">Projects</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
 
     <!-- Footer -->
     <footer>
@@ -459,30 +435,9 @@
         </div>
     </footer>
 
-    <!-- Floating Actions -->
-    <a href="https://wa.me/27633191727" class="whatsapp-float" target="_blank">
-        <i class="fab fa-whatsapp"></i>
-    </a>
-    <a href="#" class="scroll-top" id="scrollTopBtn">
-        <i class="fas fa-arrow-up"></i>
-    </a>
-
     <!-- Scripts -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <script>
-        const scrollTopBtn = document.getElementById('scrollTopBtn');
-
-        // Scroll Top Logic
-        window.addEventListener('scroll', () => {
-            if (window.scrollY > 300) scrollTopBtn.classList.add('active');
-            else scrollTopBtn.classList.remove('active');
-        });
-
-        scrollTopBtn.addEventListener('click', (e) => {
-            e.preventDefault();
-            window.scrollTo({ top: 0, behavior: 'smooth' });
-        });
-
         // Intersection Observer for Scroll Animations
         const observer = new IntersectionObserver((entries) => {
             entries.forEach((entry) => {
