@@ -4,7 +4,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Silinga Enterprise | Electrical & Solar Experts</title>
+    <meta name="description"
+        content="Silinga Enterprise - Premier providers of Solar Energy, Electrical Contracting, and Maintenance solutions in Gauteng. 100% Black Owned.">
+    <meta name="keywords" content="Solar, Electrical, Inverter, Backup Power, Maintenance, Gauteng, Silinga">
+    <meta name="author" content="Silinga Enterprise">
+    <title>Silinga Enterprise | Sustainable Energy & Maintenance</title>
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/jpeg" href="Logo.jpeg">
 
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -14,12 +21,17 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&family=Plus+Jakarta+Sans:wght@400;500;600&display=swap"
         rel="stylesheet">
-    <link rel="icon" type="image/jpeg" href="favicon.ico">
 
+    <!-- Custom CSS -->
     <link rel="stylesheet" href="css/style.css">
 </head>
 
 <body>
+
+    <!-- Preloader -->
+    <div id="preloader">
+        <div class="loader"></div>
+    </div>
 
     <!-- Fluid Background Animation -->
     <div class="fluid-bg">
@@ -31,7 +43,7 @@
     <!-- Navbar -->
     <nav class="navbar navbar-expand-lg fixed-top">
         <div class="container">
-            <a class="navbar-brand" href="index.html">
+            <a class="navbar-brand" href="#">
                 <img src="Logo.jpeg" alt="Silinga Enterprise" height="50">
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
@@ -39,12 +51,14 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto align-items-center">
-                    <li class="nav-item"><a class="nav-link active" href="index.html">Home</a></li>
-                    <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
-                    <li class="nav-item"><a class="nav-link" href="services.html">Services</a></li>
-                    <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="#home">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#services">Services</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#projects">Work</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#testimonials">Clients</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
                     <li class="nav-item ms-lg-3">
-                        <a href="contact.html" class="btn btn-fluid pulse-btn">Get Started</a>
+                        <a href="#contact" class="btn btn-fluid pulse-btn">Get Started</a>
                     </li>
                 </ul>
             </div>
@@ -54,103 +68,426 @@
     <!-- Cinematic Hero Section -->
     <section id="home" class="hero-section">
         <div class="hero-content reveal">
-            <h1 class="display-fluid mb-4 hero-title">Empowering Tomorrow, <span>Today</span></h1>
-            <p class="lead-fluid mb-5">Lighting the Path to Sustainable Energy. Certified Electrical Maintenance,
-                Advanced Solar Systems, and Security Installations.</p>
+            <h1 class="display-fluid mb-4 hero-title">Lighting the Path to <span>Sustainable Energy</span></h1>
+            <p class="lead-fluid mb-5">Reliable Power Solutions for Home & Business. Certified Electrical Contracting
+                and Comprehensive Maintenance Solutions in Gauteng.</p>
             <div class="d-flex flex-wrap justify-content-center gap-3">
-                <a href="services.html" class="btn btn-fluid">Explore Services</a>
-                <a href="contact.html" class="btn btn-outline-fluid">Get a Quote</a>
+                <a href="#services" class="btn btn-fluid">Our Solutions</a>
+                <a href="tel:+27633191727" class="btn btn-outline-fluid">Call Now</a>
             </div>
         </div>
     </section>
 
-    <!-- Trust Strip -->
-    <div class="py-5 border-bottom" style="background: rgba(255,255,255,0.9);">
+    <!-- About Section -->
+    <section id="about" class="section-padding" style="background: rgba(255,255,255,0.8);">
         <div class="container">
-            <div class="row text-center g-4 justify-content-center reveal delay-100">
-                <div class="col-6 col-md-3">
-                    <div class="p-3">
-                        <h2 class="text-success mb-0 fw-bold display-4">100%</h2>
-                        <span class="text-muted fw-bold small text-uppercase ls-2">Certified</span>
-                    </div>
-                </div>
-                <div class="col-6 col-md-3">
-                    <div class="p-3">
-                        <h2 class="text-success mb-0 fw-bold display-4">24/7</h2>
-                        <span class="text-muted fw-bold small text-uppercase ls-2">Support</span>
-                    </div>
-                </div>
-                <div class="col-6 col-md-3">
-                    <div class="p-3">
-                        <h2 class="text-success mb-0 fw-bold display-4">500+</h2>
-                        <span class="text-muted fw-bold small text-uppercase ls-2">Projects</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
+            <div class="about-grid">
+                <div class="reveal">
+                    <h5 class="text-success text-uppercase ls-2">About Silinga Enterprise</h5>
+                    <h2 class="h2-fluid mb-4">Shaping a Greener Future</h2>
+                    <p class="text-muted mb-4">Silinga Enterprise specializes in providing comprehensive solutions in
+                        solar energy and electrical work. With a focus on sustainability and innovation, we deliver
+                        top-notch services for residential, commercial, and industrial applications.</p>
 
-    <!-- Who We Are Section -->
-    <section class="section-padding">
-        <div class="container">
-            <div class="row align-items-center">
-                <div class="col-lg-6 reveal">
-                    <h5 class="text-success text-uppercase ls-2">About Us</h5>
-                    <h2 class="mb-4">Leading the Way in Solar & Electrical Solutions</h2>
-                    <p class="lead text-muted mb-4">Silinga Enterprise specialises in providing comprehensive solutions
-                        in the fields of solar energy and electrical work. We are committed to sustainability,
-                        innovation, and excellence.</p>
-                    <ul class="list-unstyled mb-4">
-                        <li class="mb-2"><i class="fas fa-check-circle text-success me-2"></i> Certified Professionals
-                        </li>
-                        <li class="mb-2"><i class="fas fa-check-circle text-success me-2"></i> Tailored Solar Systems
-                        </li>
-                        <li class="mb-2"><i class="fas fa-check-circle text-success me-2"></i> 24/7 Support &
-                            Maintenance</li>
+                    <div class="row g-4 mt-2">
+                        <div class="col-md-6">
+                            <div class="vm-card">
+                                <h4><i class="fas fa-eye text-success me-2"></i> Our Vision</h4>
+                                <p class="small text-muted mb-0">To be a leading provider of sustainable energy
+                                    solutions, transforming how Gauteng powers its future.</p>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="vm-card">
+                                <h4><i class="fas fa-rocket text-success me-2"></i> Our Mission</h4>
+                                <p class="small text-muted mb-0">Delivering cutting-edge solar and electrical services
+                                    that ensure reliability, safety, and customer satisfaction.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="reveal delay-200 p-4 bg-white rounded-4 shadow-sm border">
+                    <h4 class="mb-4 text-dark">Why Choose Us?</h4>
+                    <ul class="list-unstyled values-list">
+                        <li><i class="fas fa-check-circle"></i> Expertise & Experience</li>
+                        <li><i class="fas fa-check-circle"></i> Customized Solutions</li>
+                        <li><i class="fas fa-check-circle"></i> Quality Products & Workmanship</li>
+                        <li><i class="fas fa-check-circle"></i> Competitive Pricing</li>
+                        <li><i class="fas fa-check-circle"></i> 100% Black Owned Company</li>
                     </ul>
-                    <a href="about.html" class="btn btn-fluid">Read More</a>
                 </div>
-                <div class="col-lg-6 reveal delay-100">
-                    <div class="about-card text-center">
-                        <i class="fas fa-solar-panel fa-4x text-success mb-3"></i>
-                        <h4>Empowering Your Energy Independence</h4>
-                        <p class="text-muted">Join hundreds of satisfied clients who have switched to cleaner, more
-                            reliable energy.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="section-padding">
+        <div class="container">
+            <div class="text-center max-w-2xl mx-auto mb-5 reveal">
+                <h5 class="text-success text-uppercase ls-2">Our Expertise</h5>
+                <h2 class="h2-fluid mb-3 text-white">Comprehensive Services</h2>
+                <p class="text-white-50">From solar arrays to waterproofing, we cover it all.</p>
+            </div>
+
+            <div class="services-grid">
+                <!-- Solar -->
+                <div class="service-card reveal delay-100">
+                    <div class="icon-box"><i class="fas fa-solar-panel"></i></div>
+                    <h3>Solar Energy Solutions</h3>
+                    <ul class="service-list">
+                        <li>Rooftop & Ground-mounted Installations</li>
+                        <li>PV System Design</li>
+                        <li>Panel Maintenance & Cleaning</li>
+                        <li>Performance Optimization</li>
+                    </ul>
+                    <a href="#contact" class="service-link">Go Solar <i class="fas fa-arrow-right"></i></a>
+                </div>
+
+                <!-- Electrical -->
+                <div class="service-card reveal delay-200">
+                    <div class="icon-box"><i class="fas fa-bolt"></i></div>
+                    <h3>Electrical Contracting</h3>
+                    <ul class="service-list">
+                        <li>Wiring & Installation (Res/Comm/Ind)</li>
+                        <li>Panel Upgrades & Maintenance</li>
+                        <li>Lighting Design & Retrofitting</li>
+                        <li>Safety Inspections & COC</li>
+                    </ul>
+                    <a href="#contact" class="service-link">Get Wired <i class="fas fa-arrow-right"></i></a>
+                </div>
+
+                <!-- Efficiency -->
+                <div class="service-card reveal delay-300">
+                    <div class="icon-box"><i class="fas fa-chart-line"></i></div>
+                    <h3>Energy Efficiency</h3>
+                    <ul class="service-list">
+                        <li>Energy Audits</li>
+                        <li>LED Lighting Retrofits</li>
+                        <li>Power Factor Correction</li>
+                        <li>Energy Management Systems</li>
+                    </ul>
+                    <a href="#contact" class="service-link">Save Energy <i class="fas fa-arrow-right"></i></a>
+                </div>
+
+                <!-- Battery -->
+                <div class="service-card reveal delay-100">
+                    <div class="icon-box"><i class="fas fa-battery-full"></i></div>
+                    <h3>Battery Storage</h3>
+                    <ul class="service-list">
+                        <li>Backup Power Solutions</li>
+                        <li>Solar PV Integration</li>
+                        <li>Grid Outage Mitigation</li>
+                        <li>Maintenance & Monitoring</li>
+                    </ul>
+                    <a href="#contact" class="service-link">Stay Powered <i class="fas fa-arrow-right"></i></a>
+                </div>
+
+                <!-- Waterproofing -->
+                <div class="service-card reveal delay-200">
+                    <div class="icon-box"><i class="fas fa-water"></i></div>
+                    <h3>Waterproofing</h3>
+                    <ul class="service-list">
+                        <li>Roof & Basement Waterproofing</li>
+                        <li>Balcony & Terrace Sealing</li>
+                        <li>Foundation Protection</li>
+                        <li>Retaining Walls</li>
+                    </ul>
+                    <a href="#contact" class="service-link">Protect Home <i class="fas fa-arrow-right"></i></a>
+                </div>
+
+                <!-- Maintenance -->
+                <div class="service-card reveal delay-300">
+                    <div class="icon-box"><i class="fas fa-tools"></i></div>
+                    <h3>General Maintenance</h3>
+                    <ul class="service-list">
+                        <li>Plumbing & Electrical Repairs</li>
+                        <li>Gas Stove Installations</li>
+                        <li>Painting & Decorating</li>
+                        <li>HVAC Maintenance</li>
+                    </ul>
+                    <a href="#contact" class="service-link">Fix It All <i class="fas fa-arrow-right"></i></a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Gallery -->
+    <section id="projects" class="gallery-wrapper">
+        <div class="container section-padding text-white text-center reveal">
+            <h5 class="text-success text-uppercase ls-2">Our Portfolio</h5>
+            <h2 class="h2-fluid text-white mb-5">Recent Workmanship</h2>
+        </div>
+        <div class="gallery-grid">
+            <div class="gallery-item">
+                <img src="service1.jpeg" alt="Solar">
+                <div class="gallery-overlay">
+                    <div class="gallery-content">
+                        <h4>Solar Installation</h4><span>3.5kw - 30kw Systems</span>
+                    </div>
+                </div>
+            </div>
+            <div class="gallery-item">
+                <img src="service2.jpeg" alt="Inverter">
+                <div class="gallery-overlay">
+                    <div class="gallery-content">
+                        <h4>Hybrid Inverters</h4><span>Deye & Sunsynk</span>
+                    </div>
+                </div>
+            </div>
+            <div class="gallery-item">
+                <img src="service3.jpeg" alt="DB">
+                <div class="gallery-overlay">
+                    <div class="gallery-content">
+                        <h4>Electrical Panels</h4><span>Upgrades & Maintenance</span>
+                    </div>
+                </div>
+            </div>
+            <div class="gallery-item">
+                <img src="service4.jpeg" alt="Growatt">
+                <div class="gallery-overlay">
+                    <div class="gallery-content">
+                        <h4>Commercial Solar</h4><span>Large Scale Arrays</span>
+                    </div>
+                </div>
+            </div>
+            <div class="gallery-item">
+                <img src="service5.jpeg" alt="Battery">
+                <div class="gallery-overlay">
+                    <div class="gallery-content">
+                        <h4>Battery Storage</h4><span>LiFePo4 Solutions</span>
+                    </div>
+                </div>
+            </div>
+            <div class="gallery-item">
+                <img src="service6.jpeg" alt="Cables">
+                <div class="gallery-overlay">
+                    <div class="gallery-content">
+                        <h4>Cable Jointing</h4><span>High Voltage Work</span>
+                    </div>
+                </div>
+            </div>
+            <div class="gallery-item">
+                <img src="service7.jpeg" alt="Backup">
+                <div class="gallery-overlay">
+                    <div class="gallery-content">
+                        <h4>Backup Power</h4><span>Residential Systems</span>
+                    </div>
+                </div>
+            </div>
+            <div class="gallery-item">
+                <img src="service8.jpeg" alt="Repair">
+                <div class="gallery-overlay">
+                    <div class="gallery-content">
+                        <h4>Site Repairs</h4><span>General Maintenance</span>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Services Preview -->
-    <section class="section-padding bg-light">
+    <!-- Testimonials Section -->
+    <section id="testimonials" class="section-padding bg-white">
         <div class="container">
             <div class="text-center mb-5 reveal">
-                <h5 class="text-success text-uppercase ls-2">What We Do</h5>
-                <h2 class="mb-3">Our Core Services</h2>
+                <h5 class="text-success text-uppercase ls-2">Success Stories</h5>
+                <h2 class="h2-fluid">Trusted by Clients Across Gauteng</h2>
             </div>
-            <div class="services-grid">
-                <div class="service-card reveal">
-                    <div class="icon-box"><i class="fas fa-solar-panel"></i></div>
-                    <h3>Solar Solutions</h3>
-                    <p>Customized PV systems for residential and commercial properties.</p>
-                    <a href="services.html" class="service-link">Learn More <i class="fas fa-arrow-right"></i></a>
+
+            <!-- Carousel -->
+            <div id="testimonialCarousel" class="carousel slide reveal delay-100" data-bs-ride="carousel">
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <div class="row justify-content-center">
+                            <div class="col-md-8">
+                                <div class="testimonial-card text-center">
+                                    <div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i
+                                            class="fas fa-star"></i><i class="fas fa-star"></i><i
+                                            class="fas fa-star"></i></div>
+                                    <p class="lead mb-4">"Professional installation of our 30kw solar system. The team
+                                        handled everything from property maintenance to the final electrical checks."
+                                    </p>
+                                    <div class="client-info">
+                                        <h5>URCSA Church</h5>
+                                        <small>Orlando East</small>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <div class="row justify-content-center">
+                            <div class="col-md-8">
+                                <div class="testimonial-card text-center">
+                                    <div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i
+                                            class="fas fa-star"></i><i class="fas fa-star"></i><i
+                                            class="fas fa-star"></i></div>
+                                    <p class="lead mb-4">"Excellent service on our solar system and electrical work.
+                                        Highly recommended for schools and large institutions."</p>
+                                    <div class="client-info">
+                                        <h5>Principal Nasreen</h5>
+                                        <small>Aloe Ridge Primary School</small>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <div class="row justify-content-center">
+                            <div class="col-md-8">
+                                <div class="testimonial-card text-center">
+                                    <div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i
+                                            class="fas fa-star"></i><i class="fas fa-star"></i><i
+                                            class="fas fa-star"></i></div>
+                                    <p class="lead mb-4">"Great work on the 3.5kw solar system and property rewiring.
+                                        Silinga Enterprise is reliable and efficient."</p>
+                                    <div class="client-info">
+                                        <h5>Mr. Magic</h5>
+                                        <small>Teefontein Pharmacy</small>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                <div class="service-card reveal delay-100">
-                    <div class="icon-box"><i class="fas fa-bolt"></i></div>
-                    <h3>Electrical Work</h3>
-                    <p>Professional wiring, repairs, and safety inspections.</p>
-                    <a href="services.html" class="service-link">Learn More <i class="fas fa-arrow-right"></i></a>
-                </div>
-                <div class="service-card reveal delay-200">
-                    <div class="icon-box"><i class="fas fa-battery-full"></i></div>
-                    <h3>Backup Power</h3>
-                    <p>Reliable battery storage systems to keep you powered during outages.</p>
-                    <a href="services.html" class="service-link">Learn More <i class="fas fa-arrow-right"></i></a>
+                <button class="carousel-control-prev" type="button" data-bs-target="#testimonialCarousel"
+                    data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon bg-dark rounded-circle" aria-hidden="true"></span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#testimonialCarousel"
+                    data-bs-slide="next">
+                    <span class="carousel-control-next-icon bg-dark rounded-circle" aria-hidden="true"></span>
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section id="faq" class="section-padding" style="background-color: var(--bg-off-white);">
+        <div class="container">
+            <div class="text-center mb-5 reveal">
+                <h5 class="text-success text-uppercase ls-2">Common Questions</h5>
+                <h2 class="h2-fluid">Frequently Asked Questions</h2>
+            </div>
+            <div class="row justify-content-center">
+                <div class="col-lg-8 reveal delay-100">
+                    <div class="accordion" id="faqAccordion">
+                        <div class="accordion-item faq-item">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                                    data-bs-target="#faq1">
+                                    Do you provide Electrical COC Certificates?
+                                </button>
+                            </h2>
+                            <div id="faq1" class="accordion-collapse collapse show" data-bs-parent="#faqAccordion">
+                                <div class="accordion-body">
+                                    Yes, we issue Certificates of Compliance (COC) for all our electrical installations
+                                    and major repairs, ensuring your property meets South African safety standards.
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item faq-item">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                    data-bs-target="#faq2">
+                                    What areas do you service?
+                                </button>
+                            </h2>
+                            <div id="faq2" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                                <div class="accordion-body">
+                                    We primarily serve Johannesburg and surrounding areas in Gauteng, including Soweto,
+                                    Grasmere, and the greater metropolitan area.
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item faq-item">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                    data-bs-target="#faq3">
+                                    How long does a typical solar installation take?
+                                </button>
+                            </h2>
+                            <div id="faq3" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                                <div class="accordion-body">
+                                    Residential installations typically take 1-3 days depending on the system size.
+                                    Commercial projects will have a custom timeline discussed during the quotation
+                                    phase.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
-            <div class="text-center mt-5 reveal">
-                <a href="services.html" class="btn btn-outline-dark rounded-pill px-5 py-3">View All Services</a>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="section-padding">
+        <div class="container">
+            <div class="contact-grid">
+                <div class="reveal">
+                    <h5 class="text-success text-uppercase ls-2">Contact Us</h5>
+                    <h2 class="h2-fluid mb-4">Let's Discuss Your Project</h2>
+                    <p class="text-muted mb-5">Ready to switch to solar or need reliable electrical maintenance? Contact
+                        us today.</p>
+
+                    <div class="contact-info-card">
+                        <i class="fas fa-map-marker-alt contact-icon-small"></i>
+                        <div>
+                            <h5 class="mb-1">Address</h5>
+                            <p class="text-muted mb-0">Serving Surrounding Areas of Johannesburg</p>
+                        </div>
+                    </div>
+
+                    <div class="contact-info-card">
+                        <i class="fas fa-phone-alt contact-icon-small"></i>
+                        <div>
+                            <h5 class="mb-1">Phone</h5>
+                            <p class="text-muted mb-0">+27 63 319 1727</p>
+                        </div>
+                    </div>
+
+                    <div class="contact-info-card">
+                        <i class="fas fa-envelope contact-icon-small"></i>
+                        <div>
+                            <h5 class="mb-1">Email</h5>
+                            <p class="text-muted mb-0">xolanisilinga55@gmail.com</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="reveal delay-200">
+                    <form id="contactForm" class="p-4 bg-white rounded-4 shadow-sm border"
+                        onsubmit="event.preventDefault(); alert('Thank you! Your message has been sent successfully. We will contact you shortly.'); document.getElementById('contactForm').reset();">
+                        <div class="row g-3">
+                            <div class="col-md-6">
+                                <label class="form-label text-muted small fw-bold">Name</label>
+                                <input type="text" class="form-control" required>
+                            </div>
+                            <div class="col-md-6">
+                                <label class="form-label text-muted small fw-bold">Phone</label>
+                                <input type="tel" class="form-control" required>
+                            </div>
+                            <div class="col-12">
+                                <label class="form-label text-muted small fw-bold">Service Required</label>
+                                <select class="form-select">
+                                    <option>Solar Energy Solution</option>
+                                    <option>Electrical Contracting</option>
+                                    <option>Waterproofing</option>
+                                    <option>General Maintenance</option>
+                                    <option>Gas Stove Installation</option>
+                                    <option>Energy Efficiency Audit</option>
+                                </select>
+                            </div>
+                            <div class="col-12">
+                                <label class="form-label text-muted small fw-bold">Message</label>
+                                <textarea class="form-control" rows="4" required></textarea>
+                            </div>
+                            <div class="col-12">
+                                <button type="submit" class="btn btn-fluid w-100">Send Message</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
             </div>
         </div>
     </section>
@@ -161,29 +498,33 @@
             <div class="row g-4">
                 <div class="col-lg-4">
                     <h5 class="text-white mb-3">Silinga Enterprise</h5>
-                    <p>Professional Solar Installation And Electric Work. We ensure quality, safety, and reliability in
-                        every project.</p>
+                    <p>Empowering homes and businesses with sustainable energy and reliable maintenance solutions. 100%
+                        Black Owned.</p>
                 </div>
                 <div class="col-lg-2 offset-lg-2">
                     <h5>Links</h5>
                     <ul class="list-unstyled d-flex flex-column gap-2">
-                        <li><a href="index.html">Home</a></li>
-                        <li><a href="about.html">About</a></li>
-                        <li><a href="services.html">Services</a></li>
-                        <li><a href="contact.html">Contact</a></li>
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#about">About</a></li>
+                        <li><a href="#services">Services</a></li>
+                        <li><a href="#contact">Contact</a></li>
                     </ul>
                 </div>
                 <div class="col-lg-4">
                     <h5>Connect</h5>
-                    <div class="d-flex gap-3 mt-3">
+                    <div class="d-flex gap-3 mt-3 mb-4">
                         <a href="#"><i class="fab fa-facebook-f fa-lg"></i></a>
                         <a href="#"><i class="fab fa-instagram fa-lg"></i></a>
                         <a href="#"><i class="fab fa-linkedin-in fa-lg"></i></a>
                     </div>
+                    <ul class="list-unstyled text-muted small">
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Terms of Service</a></li>
+                    </ul>
                 </div>
             </div>
             <div class="border-top border-secondary mt-5 pt-4 text-center">
-                <p class="mb-0 small">&copy; 2024 Silinga Enterprise. All Rights Reserved.</p>
+                <p class="mb-0 small">&copy; <span id="year">2025</span> Silinga Enterprise. All Rights Reserved.</p>
             </div>
         </div>
     </footer>
@@ -200,6 +541,18 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <script>
         const scrollTopBtn = document.getElementById('scrollTopBtn');
+        const preloader = document.getElementById('preloader');
+
+        // Preloader Logic
+        window.addEventListener('load', () => {
+            preloader.style.opacity = '0';
+            setTimeout(() => {
+                preloader.style.display = 'none';
+            }, 500);
+        });
+
+        // Current Year
+        document.getElementById('year').textContent = new Date().getFullYear();
 
         // Scroll Top Logic
         window.addEventListener('scroll', () => {
@@ -212,7 +565,6 @@
             window.scrollTo({ top: 0, behavior: 'smooth' });
         });
 
-        // Intersection Observer for Scroll Animations
         const observer = new IntersectionObserver((entries) => {
             entries.forEach((entry) => {
                 if (entry.isIntersecting) {
@@ -221,8 +573,7 @@
             });
         }, { threshold: 0.1 });
 
-        const hiddenElements = document.querySelectorAll('.reveal');
-        hiddenElements.forEach((el) => observer.observe(el));
+        document.querySelectorAll('.reveal').forEach((el) => observer.observe(el));
     </script>
 </body>
 
