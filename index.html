@@ -16,343 +16,7 @@
         rel="stylesheet">
     <link rel="icon" type="image/jpeg" href="favicon.ico">
 
-    <style>
-        /* --- FLUID DESIGN SYSTEM --- */
-        :root {
-            --brand-navy: #032b43;
-            --brand-green: #3bb54a;
-            --brand-green-hover: #2e963b;
-            --text-main: #1e293b;
-            --text-muted: #64748b;
-            --bg-off-white: rgba(248, 250, 252, 0.7);
-            --glass-bg: rgba(255, 255, 255, 0.85);
-            --glass-border: rgba(255, 255, 255, 0.3);
-        }
-
-        body {
-            font-family: 'Plus Jakarta Sans', sans-serif;
-            color: var(--text-main);
-            overflow-x: hidden;
-            background-color: transparent;
-            scroll-behavior: smooth;
-            position: relative;
-        }
-
-        /* --- FLUID BACKGROUND ANIMATION --- */
-        .fluid-bg {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100vw;
-            height: 100vh;
-            z-index: -1;
-            overflow: hidden;
-            background: #f8fafc;
-            pointer-events: none;
-        }
-
-        .fluid-blob {
-            position: absolute;
-            filter: blur(60px);
-            border-radius: 50%;
-            animation: floatBlob 20s infinite ease-in-out alternate;
-            opacity: 1;
-        }
-
-        .blob-1 {
-            width: 600px;
-            height: 600px;
-            top: -100px;
-            left: -100px;
-            background: radial-gradient(circle, rgba(59, 181, 74, 0.4) 0%, rgba(255, 255, 255, 0) 70%);
-            animation-duration: 25s;
-        }
-
-        .blob-2 {
-            width: 500px;
-            height: 500px;
-            bottom: -50px;
-            right: -50px;
-            background: radial-gradient(circle, rgba(3, 43, 67, 0.3) 0%, rgba(255, 255, 255, 0) 70%);
-            animation-duration: 30s;
-            animation-delay: -5s;
-        }
-
-        .blob-3 {
-            width: 400px;
-            height: 400px;
-            top: 40%;
-            left: 30%;
-            background: radial-gradient(circle, rgba(59, 181, 74, 0.3) 0%, rgba(255, 255, 255, 0) 70%);
-            animation-duration: 20s;
-            animation-delay: -10s;
-        }
-
-        @keyframes floatBlob {
-            0% {
-                transform: translate(0, 0) scale(1);
-            }
-
-            100% {
-                transform: translate(50px, 30px) scale(1.1);
-            }
-        }
-
-        h1,
-        h2,
-        h3,
-        h4,
-        h5 {
-            font-family: 'Outfit', sans-serif;
-            color: var(--brand-navy);
-            font-weight: 700;
-            line-height: 1.1;
-        }
-
-        /* Typography */
-        .display-fluid {
-            font-size: clamp(2.5rem, 6vw + 1rem, 5.5rem);
-            font-weight: 800;
-            letter-spacing: -0.02em;
-            text-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
-        }
-
-        .h2-fluid {
-            font-size: clamp(2rem, 3vw + 1rem, 3.5rem);
-        }
-
-        .lead-fluid {
-            font-size: clamp(1.1rem, 1.5vw, 1.35rem);
-            font-weight: 400;
-            color: rgba(255, 255, 255, 0.95);
-            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
-        }
-
-        /* Buttons */
-        .btn-fluid {
-            padding: 1rem 2.5rem;
-            font-size: 1rem;
-            font-weight: 600;
-            border-radius: 50px;
-            background: linear-gradient(135deg, var(--brand-green), var(--brand-green-hover));
-            color: white;
-            border: none;
-            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-            position: relative;
-            overflow: hidden;
-            z-index: 1;
-            text-decoration: none;
-            display: inline-block;
-        }
-
-        .btn-fluid:hover {
-            transform: translateY(-4px) scale(1.02);
-            box-shadow: 0 15px 30px rgba(59, 181, 74, 0.4);
-            color: white;
-        }
-
-        .btn-outline-fluid {
-            padding: 1rem 2.5rem;
-            font-size: 1rem;
-            font-weight: 600;
-            border-radius: 50px;
-            background: rgba(255, 255, 255, 0.1);
-            backdrop-filter: blur(5px);
-            color: white;
-            border: 2px solid white;
-            transition: all 0.3s ease;
-            text-decoration: none;
-            display: inline-block;
-        }
-
-        .btn-outline-fluid:hover {
-            background-color: white;
-            color: var(--brand-navy);
-            border-color: white;
-        }
-
-        /* Navbar */
-        .navbar {
-            background: rgba(255, 255, 255, 0.8);
-            backdrop-filter: blur(15px);
-            -webkit-backdrop-filter: blur(15px);
-            border-bottom: 1px solid rgba(255, 255, 255, 0.5);
-            padding: 1rem 0;
-            transition: 0.3s;
-        }
-
-        .nav-link {
-            font-family: 'Outfit', sans-serif;
-            font-weight: 600;
-            color: var(--brand-navy) !important;
-            margin: 0 0.8rem;
-            position: relative;
-            padding: 5px 0;
-        }
-
-        .nav-link::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 0;
-            height: 2px;
-            background: var(--brand-green);
-            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-        }
-
-        .nav-link:hover::after,
-        .nav-link.active::after {
-            width: 100%;
-        }
-
-        /* Hero Section */
-        .hero-section {
-            position: relative;
-            min-height: 100vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-            color: white;
-            overflow: hidden;
-            padding-top: 60px;
-            background-color: var(--brand-navy);
-            background-image: linear-gradient(180deg, rgba(3, 43, 67, 0.85) 0%, rgba(3, 43, 67, 0.6) 50%, rgba(3, 43, 67, 0.9) 100%), url('https://images.unsplash.com/photo-1509391366360-2e959784a276?q=80&w=2072&auto=format&fit=crop');
-            background-size: cover;
-            background-position: center;
-        }
-
-        .hero-content {
-            max-width: 1000px;
-            padding: 0 20px;
-            z-index: 1;
-        }
-
-        .hero-title span {
-            color: var(--brand-green);
-            position: relative;
-            display: inline-block;
-        }
-
-        /* Footer */
-        footer {
-            background-color: #0b1120;
-            color: #94a3b8;
-            padding: 5rem 0 3rem;
-            position: relative;
-            z-index: 10;
-        }
-
-        footer h5 {
-            color: white;
-            margin-bottom: 1.5rem;
-        }
-
-        footer a {
-            color: inherit;
-            text-decoration: none;
-            transition: 0.3s;
-        }
-
-        footer a:hover {
-            color: var(--brand-green);
-            padding-left: 5px;
-        }
-
-        /* Utils */
-        .whatsapp-float {
-            position: fixed;
-            bottom: 30px;
-            right: 30px;
-            background-color: #25d366;
-            color: white;
-            width: 65px;
-            height: 65px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 32px;
-            box-shadow: 0 10px 25px rgba(37, 211, 102, 0.4);
-            z-index: 1000;
-            transition: 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-            text-decoration: none;
-            border: 3px solid white;
-        }
-
-        .whatsapp-float:hover {
-            transform: scale(1.1) rotate(10deg);
-            color: white;
-        }
-
-        .scroll-top {
-            position: fixed;
-            bottom: 30px;
-            right: 110px;
-            background: var(--brand-navy);
-            color: white;
-            width: 65px;
-            height: 65px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 24px;
-            z-index: 999;
-            transition: 0.3s;
-            opacity: 0;
-            visibility: hidden;
-            box-shadow: 0 10px 25px rgba(3, 43, 67, 0.3);
-            text-decoration: none;
-            border: 3px solid white;
-        }
-
-        .scroll-top.active {
-            opacity: 1;
-            visibility: visible;
-        }
-
-        .scroll-top:hover {
-            background: var(--brand-green);
-            color: white;
-            transform: translateY(-5px);
-        }
-
-        @keyframes pulse-green {
-            0% {
-                box-shadow: 0 0 0 0 rgba(59, 181, 74, 0.7);
-            }
-
-            70% {
-                box-shadow: 0 0 0 15px rgba(59, 181, 74, 0);
-            }
-
-            100% {
-                box-shadow: 0 0 0 0 rgba(59, 181, 74, 0);
-            }
-        }
-
-        .pulse-btn {
-            animation: pulse-green 2s infinite;
-        }
-
-        /* Animations */
-        .reveal {
-            opacity: 0;
-            transform: translateY(30px);
-            transition: all 0.8s cubic-bezier(0.5, 0, 0, 1);
-        }
-
-        .reveal.active {
-            opacity: 1;
-            transform: translateY(0);
-        }
-
-        .delay-100 {
-            transition-delay: 0.1s;
-        }
-    </style>
+    <link rel="stylesheet" href="css/style.css">
 </head>
 
 <body>
@@ -425,6 +89,71 @@
             </div>
         </div>
     </div>
+
+    <!-- Who We Are Section -->
+    <section class="section-padding">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6 reveal">
+                    <h5 class="text-success text-uppercase ls-2">About Us</h5>
+                    <h2 class="mb-4">Leading the Way in Solar & Electrical Solutions</h2>
+                    <p class="lead text-muted mb-4">Silinga Enterprise specialises in providing comprehensive solutions
+                        in the fields of solar energy and electrical work. We are committed to sustainability,
+                        innovation, and excellence.</p>
+                    <ul class="list-unstyled mb-4">
+                        <li class="mb-2"><i class="fas fa-check-circle text-success me-2"></i> Certified Professionals
+                        </li>
+                        <li class="mb-2"><i class="fas fa-check-circle text-success me-2"></i> Tailored Solar Systems
+                        </li>
+                        <li class="mb-2"><i class="fas fa-check-circle text-success me-2"></i> 24/7 Support &
+                            Maintenance</li>
+                    </ul>
+                    <a href="about.html" class="btn btn-fluid">Read More</a>
+                </div>
+                <div class="col-lg-6 reveal delay-100">
+                    <div class="about-card text-center">
+                        <i class="fas fa-solar-panel fa-4x text-success mb-3"></i>
+                        <h4>Empowering Your Energy Independence</h4>
+                        <p class="text-muted">Join hundreds of satisfied clients who have switched to cleaner, more
+                            reliable energy.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Preview -->
+    <section class="section-padding bg-light">
+        <div class="container">
+            <div class="text-center mb-5 reveal">
+                <h5 class="text-success text-uppercase ls-2">What We Do</h5>
+                <h2 class="mb-3">Our Core Services</h2>
+            </div>
+            <div class="services-grid">
+                <div class="service-card reveal">
+                    <div class="icon-box"><i class="fas fa-solar-panel"></i></div>
+                    <h3>Solar Solutions</h3>
+                    <p>Customized PV systems for residential and commercial properties.</p>
+                    <a href="services.html" class="service-link">Learn More <i class="fas fa-arrow-right"></i></a>
+                </div>
+                <div class="service-card reveal delay-100">
+                    <div class="icon-box"><i class="fas fa-bolt"></i></div>
+                    <h3>Electrical Work</h3>
+                    <p>Professional wiring, repairs, and safety inspections.</p>
+                    <a href="services.html" class="service-link">Learn More <i class="fas fa-arrow-right"></i></a>
+                </div>
+                <div class="service-card reveal delay-200">
+                    <div class="icon-box"><i class="fas fa-battery-full"></i></div>
+                    <h3>Backup Power</h3>
+                    <p>Reliable battery storage systems to keep you powered during outages.</p>
+                    <a href="services.html" class="service-link">Learn More <i class="fas fa-arrow-right"></i></a>
+                </div>
+            </div>
+            <div class="text-center mt-5 reveal">
+                <a href="services.html" class="btn btn-outline-dark rounded-pill px-5 py-3">View All Services</a>
+            </div>
+        </div>
+    </section>
 
     <!-- Footer -->
     <footer>
