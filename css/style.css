@@ -267,6 +267,12 @@ h5 {
     display: inline-block;
 }
 
+.hero-title .text-outline-light {
+    color: transparent;
+    -webkit-text-stroke: 2px rgba(255, 255, 255, 0.8);
+    text-shadow: none; /* Remove existing shadow for crisp outline */
+}
+
 /* --- ANIMATIONS --- */
 .reveal {
     opacity: 0;

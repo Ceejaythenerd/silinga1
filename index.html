@@ -4,15 +4,110 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- SEO Meta Tags -->
     <meta name="description"
-        content="Silinga Enterprise - Premier providers of Solar Energy, Electrical Contracting, and Maintenance solutions in Gauteng. 100% Black Owned.">
+        content="Silinga Enterprise - Premier Solar Energy & Electrical Contractors in Gauteng. Specializing in residential solar systems, battery backup, and industrial electrical maintenance. 100% Black Owned.">
     <meta name="keywords"
-        content="Solar, Electrical, Inverter, Backup Power, Maintenance, Gauteng, Joburg, Jozi, Johannesburg, Silinga">
+        content="Solar Installers Gauteng, Solar Systems Johannesburg, Electrical COC, Inverter Installation, Battery Backup Solutions, Electrical Maintenance, Silinga Enterprise, Soweto Solar, Commercial Electrical Contractors">
     <meta name="author" content="Silinga Enterprise">
-    <title>Silinga Enterprise | Sustainable Energy & Maintenance</title>
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://silingaenterprise.co.za/">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://silingaenterprise.co.za/">
+    <meta property="og:title" content="Silinga Enterprise | Sustainable Energy & Electrical Solutions">
+    <meta property="og:description"
+        content="Expert solar installation and electrical maintenance services in Gauteng. We power homes and businesses with sustainable energy solutions.">
+    <meta property="og:image" content="https://silingaenterprise.co.za/logo.png">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://silingaenterprise.co.za/">
+    <meta property="twitter:title" content="Silinga Enterprise | Sustainable Energy & Electrical Solutions">
+    <meta property="twitter:description"
+        content="Expert solar installation and electrical maintenance services in Gauteng. We power homes and businesses with sustainable energy solutions.">
+    <meta property="twitter:image" content="https://silingaenterprise.co.za/logo.png">
+
+    <!-- JSON-LD Structured Data (Google AI Search Optimized) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "LocalBusiness",
+      "name": "Silinga Enterprise",
+      "image": "https://silingaenterprise.co.za/logo.png",
+      "@id": "https://silingaenterprise.co.za",
+      "url": "https://silingaenterprise.co.za",
+      "telephone": "+27781682898",
+      "email": "info@silingaenterprise.co.za",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "30113 Ext 11",
+        "addressLocality": "Soweto",
+        "addressRegion": "Gauteng",
+        "postalCode": "1809",
+        "addressCountry": "ZA"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": -26.2485,
+        "longitude": 27.8540
+      },
+      "openingHoursSpecification": {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": [
+          "Monday",
+          "Tuesday",
+          "Wednesday",
+          "Thursday",
+          "Friday",
+          "Saturday"
+        ],
+        "opens": "08:00",
+        "closes": "17:00"
+      },
+      "priceRange": "$$",
+      "sameAs": [
+        "https://www.facebook.com/silingaenterprise",
+        "https://www.instagram.com/silingaenterprise"
+      ],
+      "areaServed": {
+        "@type": "City",
+        "name": "Johannesburg"
+      },
+      "knowsAbout": [
+        "Solar Panel Installation",
+        "Inverter Systems",
+        "Lithium Battery Backup",
+        "Electrical Compliance Certificates (COC)",
+        "Industrial Electrical Maintenance"
+      ]
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [{
+        "@type": "Question",
+        "name": "Do you provide Electrical COC Certificates?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes, we issue Certificates of Compliance (COC) for all our electrical installations and major repairs, ensuring your property meets South African safety standards."
+        }
+      }, {
+        "@type": "Question",
+        "name": "What areas do you service?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "We primarily service Gauteng, including Johannesburg, Soweto, Sandton, and surrounding areas. For large commercial projects, we are available nationwide."
+        }
+      }]
+    }
+    </script>
 
     <!-- Favicon -->
-    <link rel="icon" type="image/jpeg" href="Logo.jpeg">
+    <link rel="icon" type="image/png" href="logo.png">
 
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -67,7 +162,8 @@
     <!-- Cinematic Hero Section -->
     <section id="home" class="hero-section">
         <div class="hero-content reveal">
-            <h1 class="display-fluid mb-4 hero-title">Lighting the Path to <span>Sustainable Energy</span></h1>
+            <h1 class="display-fluid mb-4 hero-title"><span class="text-outline-light">Lighting the Path to</span>
+                <span>Sustainable Energy</span></h1>
             <p class="lead-fluid mb-5">Reliable Power Solutions for Home & Business. Certified Electrical Contracting
                 and Comprehensive Maintenance Solutions in Gauteng.</p>
             <div class="d-flex flex-wrap justify-content-center gap-3">
@@ -215,78 +311,12 @@
         </div>
     </section>
 
-    <!-- Projects Gallery -->
-    <section id="projects" class="gallery-wrapper">
-        <div class="container section-padding text-white text-center reveal">
+    <section id="projects" class="gallery-wrapper section-padding bg-dark">
+        <div class="container text-center reveal">
             <h5 class="text-success text-uppercase ls-2">Our Portfolio</h5>
             <h2 class="h2-fluid text-white mb-5">Recent Workmanship</h2>
         </div>
-        <div class="gallery-grid">
-            <div class="gallery-item">
-                <img src="service1.jpeg" alt="Solar">
-                <div class="gallery-overlay">
-                    <div class="gallery-content">
-                        <h4>Solar Installation</h4><span>3.5kw - 30kw Systems</span>
-                    </div>
-                </div>
-            </div>
-            <div class="gallery-item">
-                <img src="service2.jpeg" alt="Inverter">
-                <div class="gallery-overlay">
-                    <div class="gallery-content">
-                        <h4>Hybrid Inverters</h4><span>Deye & Sunsynk</span>
-                    </div>
-                </div>
-            </div>
-            <div class="gallery-item">
-                <img src="service3.jpeg" alt="DB">
-                <div class="gallery-overlay">
-                    <div class="gallery-content">
-                        <h4>Electrical Panels</h4><span>Upgrades & Maintenance</span>
-                    </div>
-                </div>
-            </div>
-            <div class="gallery-item">
-                <img src="service4.jpeg" alt="Growatt">
-                <div class="gallery-overlay">
-                    <div class="gallery-content">
-                        <h4>Commercial Solar</h4><span>Large Scale Arrays</span>
-                    </div>
-                </div>
-            </div>
-            <div class="gallery-item">
-                <img src="service5.jpeg" alt="Battery">
-                <div class="gallery-overlay">
-                    <div class="gallery-content">
-                        <h4>Battery Storage</h4><span>LiFePo4 Solutions</span>
-                    </div>
-                </div>
-            </div>
-            <div class="gallery-item">
-                <img src="service6.jpeg" alt="Cables">
-                <div class="gallery-overlay">
-                    <div class="gallery-content">
-                        <h4>Cable Jointing</h4><span>High Voltage Work</span>
-                    </div>
-                </div>
-            </div>
-            <div class="gallery-item">
-                <img src="service7.jpeg" alt="Backup">
-                <div class="gallery-overlay">
-                    <div class="gallery-content">
-                        <h4>Backup Power</h4><span>Residential Systems</span>
-                    </div>
-                </div>
-            </div>
-            <div class="gallery-item">
-                <img src="service8.jpeg" alt="Repair">
-                <div class="gallery-overlay">
-                    <div class="gallery-content">
-                        <h4>Site Repairs</h4><span>General Maintenance</span>
-                    </div>
-                </div>
-            </div>
-        </div>
+
     </section>
 
     <!-- Testimonials Section -->
