@@ -604,7 +604,12 @@
             }
 
             // WhatsApp link with encoded message
-            whatsappBtn.href = `https://wa.me/27633191727?text=${encodeURIComponent(message)}`;
+            let finalMessage = message;
+            if (imageSrc) {
+                const imageUrl = `https://silingaenterprise.co.za/${imageSrc}`;
+                finalMessage += `\n\nReference Image: ${imageUrl}`;
+            }
+            whatsappBtn.href = `https://wa.me/27633191727?text=${encodeURIComponent(finalMessage)}`;
         });
     </script>
 </body>
