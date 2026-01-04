@@ -464,35 +464,82 @@ h5 {
 
 /* --- TESTIMONIALS --- */
 .testimonial-card {
-    background: white;
-    padding: 2.5rem;
+    background: linear-gradient(135deg, #ffffff 0%, #f8fafc 100%);
+    padding: 3rem;
     border-radius: 1.5rem;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
     height: 100%;
-    border: 1px solid rgba(0, 0, 0, 0.05);
-    transition: 0.3s;
+    border: 2px solid rgba(59, 181, 74, 0.1);
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    position: relative;
+    overflow: hidden;
+}
+
+.testimonial-card::before {
+    content: '"';
+    position: absolute;
+    top: -20px;
+    left: 20px;
+    font-size: 120px;
+    color: rgba(59, 181, 74, 0.08);
+    font-family: Georgia, serif;
+    line-height: 1;
+    z-index: 0;
 }
 
 .testimonial-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+    transform: translateY(-8px) scale(1.02);
+    box-shadow: 0 25px 50px rgba(59, 181, 74, 0.15);
     border-color: var(--brand-green);
 }
 
 .stars {
     color: #FFC107;
-    margin-bottom: 1rem;
+    margin-bottom: 1.5rem;
+    font-size: 1.2rem;
+    display: flex;
+    gap: 0.3rem;
+    justify-content: center;
+    position: relative;
+    z-index: 1;
+}
+
+.stars i {
+    filter: drop-shadow(0 2px 4px rgba(255, 193, 7, 0.3));
+    transition: transform 0.3s ease;
+}
+
+.testimonial-card:hover .stars i {
+    transform: scale(1.1);
+}
+
+.client-info {
+    position: relative;
+    z-index: 1;
+    margin-top: 1.5rem;
 }
 
 .client-info h5 {
     margin: 0;
-    font-size: 1.1rem;
+    font-size: 1.2rem;
+    color: var(--brand-navy);
+    font-weight: 700;
 }
 
 .client-info small {
-    color: var(--text-muted);
-    font-size: 0.9rem;
+    color: var(--brand-green);
+    font-size: 0.95rem;
+    font-weight: 600;
 }
+
+.testimonial-card .lead {
+    position: relative;
+    z-index: 1;
+    color: var(--text-muted);
+    font-style: italic;
+    line-height: 1.8;
+}
+
 
 /* --- GALLERY --- */
 .gallery-wrapper {
@@ -767,4 +814,58 @@ footer a:hover {
 
 .bg-warning-subtle {
     background-color: rgba(255, 193, 7, 0.1);
+}
+
+/* --- CLIENT CARDS ENHANCEMENT --- */
+.client-card {
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    position: relative;
+    overflow: hidden;
+}
+
+.client-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 4px;
+    height: 100%;
+    background: linear-gradient(180deg, var(--brand-green), var(--brand-green-hover));
+    transition: width 0.4s ease;
+}
+
+.client-card:hover {
+    transform: translateY(-8px) scale(1.03);
+    box-shadow: 0 20px 40px rgba(59, 181, 74, 0.2) !important;
+}
+
+.client-card:hover::before {
+    width: 100%;
+    opacity: 0.05;
+}
+
+.client-card .bg-success-subtle {
+    transition: all 0.4s ease;
+}
+
+.client-card:hover .bg-success-subtle {
+    background: linear-gradient(135deg, var(--brand-green), var(--brand-green-hover));
+    animation: pulse-icon 1.5s ease-in-out infinite;
+}
+
+.client-card:hover .bg-success-subtle i {
+    color: white !important;
+}
+
+@keyframes pulse-icon {
+    0%, 100% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.1);
+    }
+}
+
+.transition-all {
+    transition: all 0.3s ease;
 }
